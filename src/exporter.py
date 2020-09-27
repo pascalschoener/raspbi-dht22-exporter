@@ -28,7 +28,7 @@ class CustomCollector():
     def collect(self):
         """collect collects the metrics"""
         
-        dhtPin="board.D"+str(int(self.pin))
+        dhtPin=("board.D"+ str(self.pin))
 
         dhtDevice = adafruit_dht.DHT22(dhtPin, use_pulseio=False)
 
