@@ -32,10 +32,9 @@ class CustomCollector():
 
         humidity = dhtDevice.humidity
         temperature_c = dhtDevice.temperature
-        temperature_f = temperature_c * (9 / 5) + 32
 
         g = GaugeMetricFamily("temperature_in_celcius", 'Temperature in celcuis', labels=['node'])
-        g.add_metric([self.node], temperature_f)
+        g.add_metric([self.node], temperature_c)
         yield g
 
         c = GaugeMetricFamily("humidity_in_percent", 'Humidity in percent', labels=['node'])
