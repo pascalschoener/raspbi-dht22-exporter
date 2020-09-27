@@ -28,7 +28,7 @@ class CustomCollector():
     def collect(self):
         """collect collects the metrics"""
         
-        dhtDevice = adafruit_dht.DHT22("board.D4", use_pulseio=False)
+        dhtDevice = adafruit_dht.DHT22(board.D4, use_pulseio=False)
 
         humidity = dhtDevice.humidity
         temperature_c = dhtDevice.temperature
