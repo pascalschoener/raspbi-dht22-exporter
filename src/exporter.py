@@ -31,8 +31,7 @@ class CustomCollector():
         dhtDevice = adafruit_dht.DHT22(board.D4, use_pulseio=False)
 
         humidity = dhtDevice.humidity
-        temperature_c = dhtDevice.temperature
-        temperature_f = temperature_c * (9 / 5) + 32
+        temperature_f = dhtDevice.temperature
 
         g = GaugeMetricFamily("temperature_in_celcius", 'Temperature in celcuis', labels=['node'])
         g.add_metric([self.node], temperature_f)
