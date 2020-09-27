@@ -19,14 +19,14 @@ class CustomCollector():
     Class CustomCollector implements the collect function
     """
     def __init__(self, node=None, pin=None, retries=None):
-        self.node = node
+        self.node = nodecat
         self.pin = pin
         self.retries = retries
 
     def collect(self):
         """collect collects the metrics"""
         
-        dhtDevice = adafruit_dht.DHT22(board.{pin}, use_pulseio=False)
+        dhtDevice = adafruit_dht.DHT22(board.D4, use_pulseio=False)
 
         humidity = dhtDevice.humidity
         temperature_c = dhtDevice.temperature
