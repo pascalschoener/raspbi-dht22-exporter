@@ -19,7 +19,7 @@ class CustomCollector():
     Class CustomCollector implements the collect function
     """
     def __init__(self, node=None, pin=None, retries=None):
-        self.node = localhost
+        self.node = "localhost"
         self.pin = pin
         self.retries = retries
 
