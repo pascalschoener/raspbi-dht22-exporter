@@ -1,3 +1,3 @@
 certifi
-adafruit-circuitpython-dht --global-option="--trusted-host pypi.org"
+adafruit-circuitpython-dht
 prometheus-client==0.8.0
