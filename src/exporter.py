@@ -9,9 +9,9 @@ import logging
 import socket
 from prometheus_client.core import GaugeMetricFamily, REGISTRY
 from prometheus_client import start_http_server
-import Adafruit_DHT
+import adafruit_dht
 
-SENSOR = Adafruit_DHT.DHT22
+
 LOGFORMAT = "%(asctime)s - %(levelname)s [%(name)s] %(threadName)s %(message)s"
 
 class CustomCollector():
@@ -25,9 +25,15 @@ class CustomCollector():
 
     def collect(self):
         """collect collects the metrics"""
-        humidity, temperature = Adafruit_DHT.read_retry(SENSOR, self.pin, retries=10)
+        
+        dhtDevice = adafruit_dht.DHT22(board.{pin}, use_pulseio=False)
+
+        humidity = dhtDevice.humidity
+        temperature_c = dhtDevice.temperature
+        temperature_f = temperature_c * (9 / 5) + 32
+
         g = GaugeMetricFamily("temperature_in_celcius", 'Temperature in celcuis', labels=['node'])
-        g.add_metric([self.node], temperature)
+        g.add_metric([self.node], temperature_f)
         yield g
 
         c = GaugeMetricFamily("humidity_in_percent", 'Humidity in percent', labels=['node'])

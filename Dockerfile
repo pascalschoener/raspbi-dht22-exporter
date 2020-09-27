@@ -7,9 +7,6 @@ COPY src .
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt
 
-COPY ./fix/platform_detect.py /usr/lib/python3.6/site-packages/Adafruit_DHT/platform_detect.py
-
-RUN cat /proc/cpuinfo
-RUN cat /usr/lib/python3.6/site-packages/Adafruit_DHT/platform_detect.py
+#COPY ./fix/platform_detect.py /usr/lib/python3.6/site-packages/Adafruit_DHT/platform_detect.py
 
 ENTRYPOINT ["python3", "exporter.py"]
