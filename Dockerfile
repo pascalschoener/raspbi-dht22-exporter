@@ -1,6 +1,6 @@
 FROM hypriot/rpi-alpine:3.6
 
-RUN apk add python3 gcc python3-dev libc-dev ca-certificates --no-cache
+RUN apk add python3 gcc python3-dev libc-dev ca-certificates libgpiod2 --no-cache
 
 WORKDIR "/exporter"
 COPY src .
