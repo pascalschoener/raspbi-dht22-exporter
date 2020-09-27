@@ -30,7 +30,7 @@ class CustomCollector():
         
         dhtPin="board.D"+pin
 
-        dhtDevice = adafruit_dht.DHT22(board.D4, use_pulseio=False)
+        dhtDevice = adafruit_dht.DHT22(dhtPin, use_pulseio=False)
 
         humidity = dhtDevice.humidity
         temperature_c = dhtDevice.temperature
