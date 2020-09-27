@@ -4,9 +4,8 @@ RUN apk add python3 gcc python3-dev libc-dev --no-cache
 
 WORKDIR "/exporter"
 COPY src .
-COPY requirements.txt .
-RUN pip3 install --upgrade pip --trusted-host pypi.org --trusted-host files.pythonhosted.org
-RUN pip3 install -r requirements.txt
+RUN pip3 install adafruit-circuitpython-dht 
+RUN pip3 install prometheus-client
 
 #COPY ./fix/platform_detect.py /usr/lib/python3.6/site-packages/Adafruit_DHT/platform_detect.py
 
