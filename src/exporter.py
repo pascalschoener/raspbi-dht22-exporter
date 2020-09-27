@@ -28,7 +28,6 @@ class CustomCollector():
     def collect(self):
         """collect collects the metrics"""
         
-        logging.info("pin %s", self.pin)
         dhtDevice = adafruit_dht.DHT22(board.D4, use_pulseio=False)
 
         humidity = dhtDevice.humidity
