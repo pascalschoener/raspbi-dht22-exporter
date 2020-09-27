@@ -28,10 +28,7 @@ class CustomCollector():
     def collect(self):
         """collect collects the metrics"""
         
-
-        dhtPinS=str(self.pin)
-
-        dhtDevice = adafruit_dht.DHT22("board.D"+dhtPinS, use_pulseio=False)
+        dhtDevice = adafruit_dht.DHT22("board.D"+self.pin, use_pulseio=False)
 
         humidity = dhtDevice.humidity
         temperature_c = dhtDevice.temperature
@@ -50,7 +47,7 @@ if __name__ == '__main__':
     parser.add_argument('-p', '--port', type=int, help='The port, the exporter runs on', default=9123)
     parser.add_argument('-i', '--interval', type=int, help='The sleep interval of the exporter', default=120)
     parser.add_argument('-r', '--retries', type=int, help='The number of read retries for accurate values', default=6)    
-    parser.add_argument('-g', '--gpiopin', type=int, help='The GPIO pin, where the sensor is connected to', default=4)
+    parser.add_argument('-g', '--gpiopin', type=str, help='The GPIO pin, where the sensor is connected to', default=4)
     parser.add_argument("-l", "--loglevel", choices=['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'], help="Set the logging level")
     args = parser.parse_args()
     if args.loglevel:
