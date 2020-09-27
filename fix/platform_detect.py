@@ -108,7 +108,6 @@ def pi_version():
     elif match.group(1) == 'BCM2837':
         # Pi 3b+
         return 3
-    # Psc: This is the new CPUInfo-ID for Raspi after kernel update. The adafruit project is deprecated, no fix will be applied to the lib.
     elif match.group(1) == 'BCM2711':
         # Pi 3b+
         return 3
