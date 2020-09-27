@@ -12,5 +12,5 @@ COPY ./fix/platform_detect.py /usr/local/lib/python3.7/dist-packages/Adafruit_DH
 RUN cat /proc/cpuinfo
 RUN cat /usr/local/lib/python3.7/dist-packages/Adafruit_DHT/platform_detect.py
 
-ENTRYPOINT [ "/bin/bash" ]
+#ENTRYPOINT [ "/bin/bash" ]
 #ENTRYPOINT ["python3", "exporter.py"]
