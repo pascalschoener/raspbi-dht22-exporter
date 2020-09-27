@@ -12,4 +12,4 @@ COPY ./fix/platform_detect.py /usr/lib/python3.6/site-packages/Adafruit_DHT/plat
 RUN cat /proc/cpuinfo
 RUN cat /usr/lib/python3.6/site-packages/Adafruit_DHT/platform_detect.py
 
-#ENTRYPOINT ["python3", "exporter.py"]
+ENTRYPOINT ["python3", "exporter.py"]
