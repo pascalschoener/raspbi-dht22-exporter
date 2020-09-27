@@ -1,2 +1,2 @@
-Adafruit-DHT==1.4.0 -install-option="--force-pi"
+Adafruit-DHT==1.4.0 --global-option="--force-pi"
 prometheus-client==0.8.0
