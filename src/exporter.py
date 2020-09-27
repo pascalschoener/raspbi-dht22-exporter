@@ -10,6 +10,8 @@ import socket
 from prometheus_client.core import GaugeMetricFamily, REGISTRY
 from prometheus_client import start_http_server
 import adafruit_dht
+import board
+
 
 
 LOGFORMAT = "%(asctime)s - %(levelname)s [%(name)s] %(threadName)s %(message)s"
