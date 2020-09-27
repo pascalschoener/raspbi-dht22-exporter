@@ -9,4 +9,6 @@ RUN pip3 install -r requirements.txt
 
 COPY ./fix/platform_detect.py /usr/local/lib/python3.7/dist-packages/Adafruit_DHT/platform_detect.py
 
+RUN "cat /proc/cpuinfo"
+
 ENTRYPOINT ["python3", "exporter.py"]
